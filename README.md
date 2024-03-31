@@ -1,22 +1,26 @@
 [![License](https://img.shields.io/badge/license-CC--BY--NC%204.0-green)](https://creativecommons.org/licenses/by-nc/4.0/)
-[![arXiv](https://img.shields.io/badge/cs.CV-%09arXiv%3A2205.00823-red)](https://arxiv.org/abs/2403.19407)
+[![arXiv](https://img.shields.io/badge/cs.CV-%09arXiv%3A2205.00823-red)](https://arxiv.org/abs/2403.19407)  <--- Paper Link
 
 
 The official implementation of the paper: 
 
 <div align="center">
-<h2>
+<h1>
 <b>
-Towards Temporally Consistent Referring Video Object Segmentation
+Towards Temporally Consistent Referring Video Object Segmentation 
 </b>
-</h2>
+</h1>
 </div>
+
 
 ## Introduction
 
 Referring Video Object Segmentation (R-VOS) methods face challenges in maintaining consistent object segmentation due to temporal context variability and the presence of other visually similar objects. 
 We propose an end-to-end R-VOS paradigm that explicitly models temporal instance consistency alongside the referring segmentation. 
 Furthermore, we propose a new Mask Consistency Score (MCS) metric to evaluate the temporal consistency of video segmentation. Extensive experiments demonstrate that our approach enhances temporal consistency by a significant margin, leading to top-ranked performance on popular R-VOS benchmarks.
+
+https://github.com/bo-miao/HTR/assets/53172019/7b2e7d56-59f8-4ba2-b502-c4e7ed9e0417
+
 ## Installation and Data Preparation
 
 Please refer to [SgMg](https://github.com/bo-miao/SgMg) for installation and data preparation.
