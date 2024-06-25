@@ -196,7 +196,7 @@ class VOSHead(nn.Module):
             self.memory_fg_bg += torch.stack([fg_embed, bg_embed], dim=1)
             self.memory_fg_bg_count += torch.stack([fg_count, bg_count], dim=1)
 
-    def forward_eval(self, mem_feat, mem_mask, mem_image, query_feat, query_image, frame_memory, frame_query, topk=None):
+    def forward_eval(self, mem_feat, mem_mask, mem_image, query_feat, query_image, frame_memory, frame_query, topk=None, mem_gap=3):
         mem_t, query_t = len(frame_memory), len(frame_query)
         feat_h, feat_w = mem_feat[-1].shape[-2:]
         assert mem_t >= 1 and query_t >= 1, "segment frames is NONE. {}/{}".format(mem_t, query_t)
@@ -239,7 +239,7 @@ class VOSHead(nn.Module):
             results_logits.append(logits)
             results_prob.append(prob)
 
-            if i % 5 == 0 and i < query_t-1:
+            if i % mem_gap == 0 and i < query_t-1:
                 self.memory_key = torch.cat([self.memory_key, query_key_feat[:, :, i].flatten(2)], dim=-1)
                 mask_feat = self.mask_encoder(query_image[:, i], prob, query_feat_16[:, i])  # b c h w
                 self.memory_mask_feature = torch.cat([self.memory_mask_feature, mask_feat.flatten(2)], dim=-1)

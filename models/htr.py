@@ -374,7 +374,7 @@ class HTRFormer(nn.Module):
         return out
 
     # propagate from N key frames to other M frames.
-    def mask_propagation(self, feat, mask, image, frame_memory, frame_query, sigmoid=True):
+    def mask_propagation(self, feat, mask, image, frame_memory, frame_query, sigmoid=True, mem_gap=3):
         t = image.shape[1]
         feat = [rearrange(x, '(b t) c h w -> b t c h w', t=t) for x in feat[:-1]]
         mem_feat = [x[:, frame_memory].flatten(0,1) for x in feat]  # [bt c h w]  4x->16x
@@ -387,7 +387,7 @@ class HTRFormer(nn.Module):
 
         self.voshead.clean_memory()
         results_logits, results_prob = self.voshead.forward_eval(mem_feat, mem_mask, mem_image, query_feat, query_image,
-                                                             frame_memory, frame_query, topk=20)
+                                                             frame_memory, frame_query, topk=20, mem_gap=mem_gap)
         self.voshead.clean_memory()
 
         res = torch.stack(results_logits, dim=1)  # b t o h w

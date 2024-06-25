@@ -29,12 +29,15 @@ Please refer to [SgMg](https://github.com/bo-miao/SgMg) for installation and dat
 
 The checkpoint for HTR w/ SwinL is available at  [HTR-SwinL](https://drive.google.com/file/d/1dfUuU67NyHV302KfPYMw286nk5VebjG7/view?usp=sharing).
 
-If you want to evaluate HTR on DAVIS, please run the following command in the `scripts` folder:
+If you want to evaluate HTR on Ref-DAVIS/YouTube-VOS, please run the following command in the `scripts` folder:
 
 ```
 sh dist_test_davis_swinl.sh
 ```
 
+```
+sh dist_test_ytv_swinl.sh
+```
 
 ## MCS Metric for Temporal Consistency
 

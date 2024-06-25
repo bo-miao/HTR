@@ -255,7 +255,7 @@ def sub_processor(lock, pid, args, data, save_path_prefix, save_visualize_path_p
                             with autocast(args.amp):
                                 # b t o h w
                                 outputs = model.mask_propagation(outputs["features"], pred_masks_vos, outputs["images"],
-                                                                 frame_memory, frame_query)
+                                                                 frame_memory, frame_query, mem_gap=5)
                                 outputs = outputs[0][:, :, :img_h, :img_w]  # unpad mask
                                 outputs = F.interpolate(outputs, size=(origin_h, origin_w), mode='bilinear', align_corners=False)
                                 outputs = F.softmax(outputs, dim=1)[:, 1]

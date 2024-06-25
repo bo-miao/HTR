@@ -114,6 +114,7 @@ def get_args_parser():
     # 'all': using the three ref datasets for pretraining
     parser.add_argument('--dataset_file', default='ytvos', help='Dataset name') 
     parser.add_argument('--coco_path', type=str, default='../datasets/coco')
+    parser.add_argument('--mevis_path', type=str, default='../datasets/mevis')
     parser.add_argument('--ytvos_path', type=str, default='../datasets/refer_youtube_vos')
     parser.add_argument('--davis_path', type=str, default='../datasets/refer_davis')
     parser.add_argument('--a2d_path', type=str, default='../datasets/a2d_sentences')
@@ -137,7 +138,7 @@ def get_args_parser():
     # test setting
     parser.add_argument('--threshold', default=0.5, type=float) # binary threshold for mask
     parser.add_argument('--ngpu', default=8, type=int, help='gpu number when inference for ref-ytvos and refer_davis')
-    parser.add_argument('--split', default='valid', type=str, choices=['valid', 'test'])
+    parser.add_argument('--split', default='valid', type=str, choices=['valid', 'test', 'valid_u'])
     parser.add_argument('--visualize', action='store_true', help='whether visualize the masks during inference')
 
     # distributed training parameters

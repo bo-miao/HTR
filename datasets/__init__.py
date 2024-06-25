@@ -1,6 +1,7 @@
 import torch.utils.data
 import torchvision
 
+from .mevis import build as build_mevis
 from .ytvos import build as build_ytvos
 from .davis import build as build_davis
 from .refexp import build as build_refexp
@@ -16,6 +17,10 @@ def get_coco_api_from_dataset(dataset):
 
 
 def build_dataset(dataset_file: str, image_set: str, args):
+    if dataset_file == 'mevis':
+        print("\n **** Start to build dataset {}. **** \n".format("build_mevis"))
+        return build_mevis(image_set, args)
+
     if dataset_file == 'ytvos':
         print("\n **** Start to build dataset {}. **** \n".format("build_ytvos"))
         return build_ytvos(image_set, args)
