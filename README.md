@@ -1,6 +1,9 @@
 [![License](https://img.shields.io/badge/license-CC--BY--NC%204.0-green)](https://creativecommons.org/licenses/by-nc/4.0/)
 [![arXiv](https://img.shields.io/badge/cs.CV-%09arXiv%3A2205.00823-red)](https://arxiv.org/abs/2403.19407)  <--- Paper Link
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/towards-temporally-consistent-referring-video/referring-expression-segmentation-on-refer-1)](https://paperswithcode.com/sota/referring-expression-segmentation-on-refer-1?p=towards-temporally-consistent-referring-video)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/towards-temporally-consistent-referring-video/referring-expression-segmentation-on-davis)](https://paperswithcode.com/sota/referring-expression-segmentation-on-davis?p=towards-temporally-consistent-referring-video)
+
 
 The official implementation of the paper: 
 
