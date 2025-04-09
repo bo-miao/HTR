@@ -22,7 +22,7 @@ Temporally Consistent Referring Video Object Segmentation with Hybrid Memory
 ## Introduction
 
 Referring Video Object Segmentation (R-VOS) methods face challenges in maintaining consistent object segmentation due to temporal context variability and the presence of other visually similar objects. 
-We propose an end-to-end R-VOS paradigm that explicitly models temporal instance consistency alongside the referring segmentation. 
+We propose **the first end-to-end paradigm that identifies aligned frames for text-conditioned segmentation and propagates mask features to achieve temporally consistent R-VOS..**
 Furthermore, we propose **a new Mask Consistency Score (MCS) metric to evaluate the temporal consistency** of video segmentation. Extensive experiments demonstrate that our approach enhances temporal consistency by a significant margin, leading to top-ranked performance on popular R-VOS benchmarks.
 
 https://github.com/bo-miao/HTR/assets/53172019/7b2e7d56-59f8-4ba2-b502-c4e7ed9e0417
